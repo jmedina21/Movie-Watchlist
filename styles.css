@@ -2,7 +2,7 @@ body{
     margin: 0px auto;
     font-family: 'Inter', sans-serif;
     background-color: #000;
-    width: 800px;
+    /* width: 800px; */
 }
 
 header{
@@ -30,7 +30,7 @@ h1{
     /* display: flex; */
     position: absolute;
     top: 93%;
-    left: 222px;
+    left: 35%;
     border: 1px solid #D1D5DB;
     border-radius: 7px;
     padding: 0 10px;
@@ -69,7 +69,6 @@ h1{
 
 .movie{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 20px 0;
     border-bottom: 1px solid #D1D5DB;
@@ -84,7 +83,6 @@ h1{
 .movie-info{
     display: flex;
     flex-direction: column;  
-    border: 1px solid red;  
     margin-left: 20px;
 }
 
@@ -94,13 +92,22 @@ h3{
 
 .movie-details{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 60%;
+    width: 70%;
+
+}
+
+.info-el:nth-child(2){
+    margin-left: 20px;
 }
 
 .add-watchlist-btn{
-    box-sizing: content-box;
+    display: flex;
+    margin-left: auto;
+}
+
+.add-watchlist-btn p{
+    margin-left: 5px;
 }
 
 .info-el{

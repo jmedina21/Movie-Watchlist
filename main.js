@@ -20,7 +20,7 @@ async function getMovieList(data) {
 
 function renderMovies(movieList){
     let movieHtml = ''
-    movieList.forEach(movieData => {
+    movieList.forEach(function (movieData, index) {
         movieHtml += `
             <div class="movie">
                 <img class="movie-poster" src="${movieData.Poster}" alt="Poster for ${movieData.Title}">
@@ -29,7 +29,10 @@ function renderMovies(movieList){
                     <div class="movie-details">
                         <p class="info-el">${movieData.Runtime}</p>
                         <p class="info-el">${movieData.Genre}</p>
-                        <img src="images/plus.svg" alt="add to watchlist button">
+                        <div class="add-watchlist-btn" data-add='index'>
+                            <img src="images/plus.svg" alt="add to watchlist button">
+                            <p> Watchlist</p>
+                        </div>
                     </div>
                     <p class="movie-description info-el">${movieData.Plot}</p>
                 </div>
