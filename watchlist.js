@@ -1,38 +1,21 @@
-const searchBtn = document.getElementById("search-btn")
-const searchInput = document.getElementById("search-input")
 const movieFeed = document.getElementById('movie-feed')
-let movieList = []
 let movieWatchlist = []
 
 if(localStorage.getItem('watchlist')){
     movieWatchlist = JSON.parse(localStorage.getItem('watchlist'))
+    renderMovies(movieWatchlist)
 }
 
 document.addEventListener('click', function(e){
-    if(e.target.dataset.add){
-        addToWatchlist(e.target.dataset.add)
+    if(e.target.dataset.remove){
+        removeFromWatchlist(e.target.dataset.remove)
     }
 })
 
-function addToWatchlist(index){
-    console.log(movieWatchlist)
-    movieWatchlist.push(movieList[index])
+function removeFromWatchlist(index){
+    movieWatchlist.splice(index, 1)
     localStorage.setItem('watchlist', JSON.stringify(movieWatchlist))
-}
-
-searchBtn.addEventListener("click", async function () {
-    let res = await fetch(`http://www.omdbapi.com/?apikey=84d8cf6b&s=${searchInput.value}`)
-    let data = await res.json()
-    getMovieList(data.Search)
-})
-
-async function getMovieList(data) {
-    for(let i = 0; i < data.length; i++){
-        let res = await fetch(`http://www.omdbapi.com/?apikey=84d8cf6b&i=${data[i].imdbID}`)
-        let movieDetails = await res.json()
-        movieList.push(movieDetails)
-    }
-    renderMovies(movieList)
+    renderMovies(movieWatchlist)
 }
 
 function renderMovies(movieList){
@@ -50,9 +33,9 @@ function renderMovies(movieList){
                     <div class="movie-details">
                         <p class="info-el">${movieData.Runtime}</p>
                         <p class="info-el">${movieData.Genre}</p>
-                        <div class="add-watchlist-btn" data-add='${index}'>
-                            <img src="images/plus.svg" alt="add to watchlist button" data-add='${index}'>
-                            <p data-add='${index}'>Watchlist</p>
+                        <div class="remove-watchlist-btn" data-remove='${index}'>
+                            <img src="images/minus.svg" alt="remove from watchlist button" data-remove='${index}'>
+                            <p data-remove='${index}'>Watchlist</p>
                         </div>
                     </div>
                     <p class="movie-description info-el">${movieData.Plot}</p>

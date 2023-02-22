@@ -1,11 +1,10 @@
 body{
     margin: 0px auto;
     font-family: 'Inter', sans-serif;
-    background-color: #000;
-    /* width: 800px; */
 }
 
 header{
+    background-color: #000;
     background-image: url("images/header bg.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,7 +26,6 @@ h1{
 }
 
 .search-bar{
-    /* display: flex; */
     position: absolute;
     top: 93%;
     left: 35%;
@@ -56,6 +54,7 @@ h1{
     background-color: #fff;
     padding: 10px 30px;
     font-family: 'Inter', sans-serif;
+    cursor: pointer;
 }
 
 .movie-feed{
@@ -90,6 +89,16 @@ h3{
     margin:0
 }
 
+.movie-header{
+    display: flex;
+    align-items: center;
+    width: 70%;
+}
+
+.movie-header img, .movie-header p{
+    margin-left: 10px;
+}
+
 .movie-details{
     display: flex;
     align-items: center;
@@ -101,15 +110,20 @@ h3{
     margin-left: 20px;
 }
 
-.add-watchlist-btn{
+.add-watchlist-btn, .remove-watchlist-btn{
     display: flex;
     margin-left: auto;
+    cursor: pointer;
 }
 
-.add-watchlist-btn p{
+.add-watchlist-btn p, .remove-watchlist-btn p{
     margin-left: 5px;
 }
 
 .info-el{
     margin: 10px 0;
+}
+
+.remove-watchlist-btn img{
+    width: 16px;
 }
