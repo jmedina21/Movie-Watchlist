@@ -4,9 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" async></script>
     <title>Movie Watchlist</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Find your Film</h1>
+        <a class="watchlist-btn" href="watchlist.html">My Watchlist</a>
+        <div class="search-bar">
+            <input id="search-input" minlength="3" type="text" placeholder= "Search for a movie...">
+            <button id="search-btn" class="search-btn">Search</button>
+        </div>
+    </header>
+    <main>
+        <div id="movie-feed" class="movie-feed">
+        </div>
+    </main>
 </body>
 </html>
