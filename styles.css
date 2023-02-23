@@ -23,6 +23,7 @@ h1{
 .watchlist-btn{
     text-decoration: none;
     color: white;
+    border-bottom: 2px solid white;
 }
 
 .search-bar{
@@ -120,10 +121,39 @@ h3{
     margin-left: 5px;
 }
 
+.add-watchlist-btn:active, .remove-watchlist-btn:active{
+    opacity: 0.5;
+}
+
 .info-el{
     margin: 10px 0;
 }
 
 .remove-watchlist-btn img{
     width: 16px;
+}
+
+@media (max-width: 768px){
+    .search-bar{
+        left: 5%;
+        right: 5%;
+        display: flex;
+    }
+
+    .search-btn{
+        margin-left: auto;
+        padding: 10px 15px;
+    }
+
+    .movie-details{
+        width: 85%;
+    }
+  
+    .add-watchlist-btn p, .remove-watchlist-btn p{
+        display: none;
+    }
+
+    .add-watchlist-btn img{
+        margin-left: auto;
+    }
 }
