@@ -21,14 +21,14 @@ function addToWatchlist(index){
 }
 
 searchBtn.addEventListener("click", async function () {
-    let res = await fetch(`http://www.omdbapi.com/?apikey=84d8cf6b&s=${searchInput.value}`)
+    let res = await fetch(`https://www.omdbapi.com/?apikey=84d8cf6b&s=${searchInput.value}`)
     let data = await res.json()
     getMovieList(data.Search)
 })
 
 async function getMovieList(data) {
     for(let i = 0; i < data.length; i++){
-        let res = await fetch(`http://www.omdbapi.com/?apikey=84d8cf6b&i=${data[i].imdbID}`)
+        let res = await fetch(`https://www.omdbapi.com/?apikey=84d8cf6b&i=${data[i].imdbID}`)
         let movieDetails = await res.json()
         movieList.push(movieDetails)
     }
